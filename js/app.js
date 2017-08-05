@@ -16,15 +16,18 @@ var Calculadora = {
         }
     ),
     efectoTecla: function(tecla){		
-        document.getElementById(tecla).addEventListener("mousedown", function(){Calculadora.reducir(tecla)});
-        document.getElementById(tecla).addEventListener("mouseup", function(){Calculadora.aumentar(tecla)});
+        /*document.getElementById(tecla).addEventListener("mousedown", function(){Calculadora.reducir(tecla)});
+        document.getElementById(tecla).addEventListener("mouseup", function(){Calculadora.aumentar(tecla)});*/
+        
+        document.getElementById(tecla).style.transform="scale(0.9)";
+		setTimeout(function() {document.getElementById(tecla).style.transform="scale(1)";}, 200);
 	},
-    reducir : function(tecla){
+    /*reducir : function(tecla){
         document.getElementById(tecla).style.transform="scale(0.9)";
     },
     aumentar : function(tecla){
         document.getElementById(tecla).style.transform="scale(1)";
-    },
+    },*/
     eventosMouse : function(){
         document.getElementById("0").addEventListener("click",function(){Calculadora.mostrarDigito("0")});
 		document.getElementById("1").addEventListener("click",function(){Calculadora.mostrarDigito("1")});
